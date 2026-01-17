@@ -1,0 +1,11 @@
+main:
+  - title: "About"
+    url: /about/
+  - title: "Projects"
+    url: /projects/
+  - title: "Blog"
+    url: /blog/
+  - title: "Cool Things"
+    url: /cool-things/
+  - title: "CV"
+    url: /assets/files/Jeffrey_Wei_CV.pdf

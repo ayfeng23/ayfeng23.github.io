@@ -1,0 +1,94 @@
+# Site Settings
+title: "Jeffrey Wei"
+name: "Jeffrey Wei"
+description: "CS & Physics student at Yale researching AI4Physics, transfer learning, and Gaussian processes"
+url: "https://jwei302.github.io"
+baseurl: "/jeffrey-wei"
+repository: "jwei302/jeffrey-wei"
+
+# Theme
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "default"
+
+# Site Author
+author:
+  name: "Jeffrey Wei"
+  bio: "CS & Physics student at Yale (May 2027). Interested in AI4Physics, transfer learning, and Gaussian processes."
+  location: "New Haven, CT"
+  email: "jeffrey.wei@yale.edu"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/jwei302"
+
+# Reading Files
+include:
+  - _pages
+  - _projects
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:path/
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+      show_date: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  # _projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: false
+      share: true
+
+# Site Features
+search: true
+search_full_content: true
+
+# Markdown Processing
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+# Archives
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
