@@ -37,6 +37,37 @@ nav a.name {
   margin-right: 40px;
 }
 
+.profile-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.profile-bio {
+  flex: 1;
+}
+
+.profile-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-size: 14px;
+  color: #111;
+  font-weight: 600;
+}
+
 h1 {
   font-size: 18px;
   font-weight: 600;
@@ -94,6 +125,9 @@ h2 {
 }
 
 .book-item {
+  margin-bottom: 16px;
+}
+.movie-item{
   margin-bottom: 16px;
 }
 
