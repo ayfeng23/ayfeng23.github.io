@@ -37,40 +37,6 @@ nav a.name {
   margin-right: 40px;
 }
 
-.profile-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 30px;
-  margin-bottom: 20px;
-}
-
-.profile-bio {
-  flex: 1;
-}
-
-.profile-image-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  flex: 0 0 auto;
-}
-
-.profile-image {
-  width: 120px;
-  height: 120px;
-  max-width: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-}
-
-.profile-name {
-  font-size: 14px;
-  color: #111;
-  font-weight: 600;
-}
-
 h1 {
   font-size: 18px;
   font-weight: 600;
@@ -127,6 +93,9 @@ h2 {
   color: #444;
 }
 
+.essay-item{
+  margin-bottom: 16px;
+}
 .book-item {
   margin-bottom: 16px;
 }
@@ -161,4 +130,13 @@ h2 {
 
 .collapsible-content {
   margin-top: 16px;
+}
+
+.last-edited {
+  margin-top: 60px;
+  padding-top: 20px;
+  /* border-top: 1px solid #ddd; */
+  color: #999;
+  font-size: 12px;
+  text-align: center;
 }
