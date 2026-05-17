@@ -89,6 +89,8 @@ h2 {
 .experience-date {
   color: #666;
   font-size: 13px;
+  white-space: nowrap;
+  padding-left: 12px;
 }
 
 .experience-org {
@@ -104,15 +106,6 @@ h2 {
 
 .experience-item li {
   margin-bottom: 4px;
-}
-
-.publication-item {
-  margin-bottom: 16px;
-}
-
-.publication-venue {
-  color: #666;
-  font-size: 13px;
 }
 
 .project-item {
