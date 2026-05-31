@@ -168,3 +168,28 @@ h2 {
   font-size: 12px;
   text-align: center;
 }
+
+.thanks-header {
+  cursor: pointer;
+  user-select: none;
+}
+
+.thanks-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.thanks-cloud .pill {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 13px;
+  color: #444;
+  white-space: nowrap;
+}

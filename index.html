@@ -128,7 +128,88 @@
       </div>
     </details>
 
+    <h2 id="thanks-header" class="thanks-header" title="Click to shuffle">Thank you to all of my research mentors and collaborators!</h2>
+    <div id="thanks-cloud" class="thanks-cloud" title="Click to shuffle"></div>
+
   </div>
   <div class="last-edited">Last edited: May 17, 2026</div>
+
+  <script>
+    (function () {
+      // Edit this list — these are the names shown as shuffling chips.
+      var people = [
+        "Rex Ying", "Andre Wibisono", "Marius Alonso", "Ambroise Odonnat",
+        "Vasilii Feofanov", "Ievgen Redko", "Andreas Varvarigos",
+        "Ali Maatouk", "Qiang Fu", "Xiuyuan Wang", "Siddharth Mitra",
+        "Kwangjun Ahn", "John Langford", "Noah Amsel",
+      ];
+
+      var cloud = document.getElementById("thanks-cloud");
+      if (!cloud) return;
+
+      function shuffled(arr) {
+        var a = arr.slice();
+        for (var i = a.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var t = a[i]; a[i] = a[j]; a[j] = t;
+        }
+        return a;
+      }
+
+      // Chips are built lazily on first open, then kept around so we can
+      // toggle them and reshuffle without rebuilding.
+      var pills = {};
+      var built = false;
+      var open = false;
+      var animating = false;
+
+      function build() {
+        shuffled(people).forEach(function (name) {
+          var el = document.createElement("span");
+          el.className = "pill";
+          el.textContent = name;
+          pills[name] = el;
+          cloud.appendChild(el);
+        });
+        built = true;
+      }
+
+      // Teleport: reorder the chips instantly through a few random states.
+      function reorder(order) {
+        order.forEach(function (n) { cloud.appendChild(pills[n]); });
+      }
+
+      function shuffle() {
+        if (animating) return;
+        animating = true;
+        var steps = 10;  // first frame is random too, then more flips, then settle
+        var i = 0;
+        (function step() {
+          reorder(shuffled(people));   // fires immediately, so the start is random
+          if (++i >= steps) { animating = false; return; }
+          setTimeout(step, 45);
+        })();
+      }
+
+      function openCloud() {
+        if (!built) build();
+        cloud.style.display = "flex";
+        open = true;
+        shuffle();
+      }
+
+      function closeCloud() {
+        cloud.style.display = "none";
+        open = false;
+      }
+
+      // Header toggles the cloud open/closed; clicking the chips reshuffles.
+      var header = document.getElementById("thanks-header");
+      if (header) header.addEventListener("click", function () {
+        if (open) closeCloud(); else openCloud();
+      });
+      cloud.addEventListener("click", shuffle);
+    })();
+  </script>
 </body>
 </html>
